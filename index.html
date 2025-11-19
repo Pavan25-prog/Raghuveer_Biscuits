@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raghuveer Osmania Biscuits – Royal Bakery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #fff8f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .banner { width: 100%; border-radius: 15px; margin-bottom: 30px; background: linear-gradient(90deg, #FFD700, #FF6347); color: white; text-align: center; padding: 50px 20px; font-family: 'Georgia', serif; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    .banner h1 { font-size: 2.5rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+    .banner p { font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    .language-select { float: right; margin-bottom: 15px; width: auto; }
+    .product-card { border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s; background: #fffdf5; }
+    .product-card:hover { transform: scale(1.05); }
+    .whatsapp-btn { background-color: #25D366; color: white; width: 100%; margin-bottom: 10px; }
+    .search-bar { margin-bottom: 30px; }
+    .history-section, .contact-section { margin-top: 50px; padding: 30px; background-color: #fff3e0; border-radius: 20px; }
+    .history-section h2, .contact-section h2 { color: #b45309; }
+    .benefits { margin-top: 30px; padding: 20px; background-color: #fff8dc; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Top Banner -->
+  <div class="banner">
+    <h1>Raghuveer Osmania Biscuits</h1>
+    <p>Royal Taste • Maharashtra Special • Freshly Made</p>
+  </div>
+
+  <!-- Language Selector -->
+  <div class="language-select">
+    <select id="language" class="form-select">
+      <option value="en">English</option>
+      <option value="mr">Marathi</option>
+      <option value="hi">Hindi</option>
+      <option value="te">Telugu</option>
+      <option value="gu">Gujarati</option>
+      <option value="kn">Kannada</option>
+      <option value="pa">Punjabi</option>
+    </select>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search products...">
+  </div>
+
+  <!-- Products Section -->
+  <div class="row" id="products">
+    <!-- Product cards will appear here -->
+  </div>
+
+  <!-- Benefits of Osmania Biscuits -->
+  <div class="benefits">
+    <h3>Main Product Benefits:</h3>
+    <ul>
+      <li><strong>Osmania Silver:</strong> Made using oil and maida. Light, crispy, and tasty.</li>
+      <li><strong>Osmania Gold:</strong> Made using ghee and aata. Rich flavor, premium quality.</li>
+    </ul>
+  </div>
+
+  <!-- History Section -->
+  <div class="history-section">
+    <h2>History of Osmania Biscuits</h2>
+    <p>Osmania Biscuits were first made in Hyderabad during the era of Mir Osman Ali Khan. They are famous for their unique sweet-salty taste and crispy texture. Raghuveer Osmania Biscuits brings this traditional taste to Maharashtra with special ingredients and care.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <h2>Contact Us</h2>
+    <p>WhatsApp: <a href="https://wa.me/910000000000" target="_blank">+91 0000000000</a></p>
+    <p>Phone: +91 0000000000</p>
+    <p>Email: info@raghuveerosmania.com</p>
+  </div>
+
+</div>
+
+<script>
+const products = [
+  {
+    name: {en:'Osmania Silver', mr:'ओस्मानिया सिल्वर', hi:'उस्मानिया सिल्वर', te:'ఒస్మానియా సిల్వర్', gu:'ઓસ્માનિયા સિલ્વર', kn:'ಒಸ್ಮಾನಿಯಾ ಸಿಲ್ವರ್', pa:'ਉਸਮਾਨੀਆ ਸਿਲਵਰ'},
+    desc: {en:'Light, crispy, made with oil and maida.', mr:'हळवा, कुरकुरीत, तेल आणि मैद्याने बनले.', hi:'हल्का, कुरकुरा, तेल और मैदे से बनाया।', te:'తేలిక, క్రిస్పీ, నూనె మరియు మైదాతో తయారు.', gu:'લાઈટ, ક્રિસ્પી, તેલ અને મેંદા સાથે બનાવ્યું.', kn:'ಸೌಮ್ಯ, ಕ್ರಿಸ್ಪಿ, ಎಣ್ಣೆ ಮತ್ತು ಹಿಟ್ಟಿನಿಂದ ತಯಾರಿಸಲಾಗಿದೆ.', pa:'ਹਲਕਾ, ਕਰਿਸਪੀ, ਤੇਲ ਅਤੇ ਮੈਦਾ ਨਾਲ ਬਣਾਇਆ।'},
+    price:'₹120 / 250g', image:'images/osmania_silver.jpg'
+  },
+  {
+    name: {en:'Osmania Gold', mr:'ओस्मानिया गोल्ड', hi:'उस्मानिया गोल्ड', te:'ఒస్మానియా గోల్డ్', gu:'ઓસ્માનિયા ગોલ્ડ', kn:'ಒಸ್ಮಾನಿಯಾ ಗೋಲ್ಡ್', pa:'ਉਸਮਾਨੀਆ ਗੋਲਡ'},
+    desc: {en:'Rich, premium quality made with ghee and aata.', mr:'संपन्न, प्रीमियम गुणवत्ता, तुप आणि पीठाने बनले.', hi:'समृद्ध, प्रीमियम गुणवत्ता, घी और आटे से बनाया।', te:'సంపన్న, ప్రీమియం నాణ్యత, నెయ్యి మరియు పిండితో తయారు.', gu:'સંપન્ન, પ્રીમિયમ ગુણવત્તા, ઘી અને આટા સાથે બનાવેલું.', kn:'ಸಂಪನ್ನ, ಪ್ರೀಮಿಯಂ ಗುಣಮಟ್ಟ, ತುಪ್ಪ ಮತ್ತು ಹಿಟ್ಟಿನಿಂದ ತಯಾರಿಸಲಾಗಿದೆ.', pa:'ਧਨਾਢ, ਪ੍ਰੀਮੀਅਮ ਕੁਆਲਿਟੀ, ਘੀ ਅਤੇ ਆਟੇ ਨਾਲ ਬਣਾਇਆ।'},
+    price:'₹150 / 250g', image:'images/osmania_gold.jpg'
+  },
+  {
+    name: {en:'Khari', mr:'खारी', hi:'खारी', te:'ఖారీ', gu:'ખારી', kn:'ಖಾರಿ', pa:'ਖਾਰੀ'},
+    desc: {en:'Crispy puff pastry, perfect tea-time snack.', mr:'कुरकुरीत पफ, चहा सोबत उत्तम.', hi:'कुरकुरी पफ, चाय के साथ उत्तम।', te:'క్రిస్పీ పఫ్, టీ టైమ్ కోసం.', gu:'ક્રિસ્પી પફ, ચા સાથે પરફેક્ટ.', kn:'ಕ್ರಿಸ್ಪಿ ಪಫ್, ಟೀ ಸಮಯದ ಸ್ನಾಕ್.', pa:'ਕ੍ਰਿਸਪੀ ਪੱਫ, ਚਾਹ ਦੇ ਨਾਲ ਉੱਤਮ।'},
+    price:'₹80 / 100g', image:'images/khari.jpg'
+  },
+  {
+    name: {en:'Toast', mr:'टोस्ट', hi:'टोस्ट', te:'టోస్ట్', gu:'ટોસ્ટ', kn:'ಟೋಸ್ಟ್', pa:'ਟੋਸਟ'},
+    desc: {en:'Freshly baked toast, great for breakfast.', mr:'ताजे बनवलेले टोस्ट, न्याहारीसाठी उत्तम.', hi:'ताजा बेक्ड टोस्ट, नाश्ते के लिए उत्तम।', te:'తాజాగా బేక్ చేసిన టోస్ట్, బ్రేక్‌ఫాస్ట్‌కు.', gu:'તાજું બેકડ ટોસ્ટ, નાસ્તા માટે શ્રેષ્ઠ.', kn:'ತಾಜಾ ಬೇಕ್ಡ್ ಟೋಸ್ಟ್, ಬ್ರೇಕ್‌ಫಾಸ್ಟ್‌ಗೆ ಉತ್ತಮ.', pa:'ਤਾਜਾ ਬੇਕ ਕੀਤਾ ਟੋਸਟ, ਨਾਸ਼ਤੇ ਲਈ ਉੱਤਮ।'},
+    price:'₹50 / slice', image:'images/toast.jpg'
+  },
+  {
+    name: {en:'Bakery Special', mr:'बेकरी स्पेशल', hi:'बेकरी स्पेशल', te:'బేకరీ స్పెషల్', gu:'બેકરી સ્પેશ્યલ', kn:'ಬೇಕರಿ ಸ್ಪೆಷಲ್', pa:'ਬੇਕਰੀ ਸਪੈਸ਼ਲ'},
+    desc: {en:'Delicious bakery item.', mr:'चविष्ट बेकरी उत्पादन.', hi:'स्वादिष्ट बेकरी उत्पाद।', te:'రుచికరమైన బేకరీ ఉత్పత్తి.', gu:'સ્વાદિષ્ટ બેકરી આઈટમ.', kn:'ರುಚಿಕರವಾದ ಬೇಕರಿ ಐಟಂ.', pa:'ਸਵਾਦਿਸ਼ਟ ਬੇਕਰੀ ਉਤਪਾਦ।'},
+    price:'₹80 / piece', image:'images/bakery_special.jpg'
+  },
+  {
+    name: {en:'Cake Slice', mr:'केक स्लाइस', hi:'केक स्लाइस', te:'కేక్ స్లైస్', gu:'કેક સ્લાઈસ', kn:'ಕೇಕ್ ಸ್ಲೈಸ್', pa:'ਕੇਕ ਸਲਾਈਸ'},
+    desc: {en:'Soft and creamy cake slice.', mr:'मऊ आणि क्रीमी केक स्लाइस.', hi:'नरम और क्रीमी केक स्लाइस।', te:'నرم మరియు క్రీమీ కేక్ స్లైస్.', gu:'સોફ્ટ અને ક્રેમી કેક સ્લાઈસ.', kn:'ಸಾಫ್ಟ್ ಮತ್ತು ಕ್ರೀಮಿ ಕೇಕ್ ಸ್ಲೈಸ್.', pa:'ਨਰਮ ਅਤੇ ਕ੍ਰੀਮੀ ਕੇਕ ਸਲਾਈਸ.'},
+    price:'₹100 / piece', image:'images/cake_slice.jpg'
+  }
+];
+
+const productsDiv = document.getElementById('products');
+const languageSelect = document.getElementById('language');
+const searchInput = document.getElementById('searchInput');
+
+function renderProducts(lang='en', filter='') {
+  productsDiv.innerHTML = '';
+  products.filter(p => p.name[lang].toLowerCase().includes(filter.toLowerCase())).forEach(p => {
+    const col = document.createElement('div');
+    col.className = 'col-md-4 mb-4';
+    col.innerHTML = `
+      <div class='card product-card p-3'>
+        <img src='${p.image}' class='card-img-top rounded' alt='${p.name[lang]}'>
+        <div class='card-body'>
+          <h5 class='card-title'>${p.name[lang]}</h5>
+          <p class='card-text'>${p.desc[lang]}</p>
+          <p class='fw-bold text-success'>${p.price}</p>
+          <a href='https://wa.me/917798471410?text=I want to order ${p.name[lang]}' target='_blank' class='btn whatsapp-btn'>Order on WhatsApp</a>
+        </div>
+      </div>
+    `;
+    productsDiv.appendChild(col);
+  });
+}
+
+languageSelect.addEventListener('change', () => renderProducts(languageSelect.value, searchInput.value));
+searchInput.addEventListener('input', () => renderProducts(languageSelect.value, searchInput.value));
+
+renderProducts();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
